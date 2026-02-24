@@ -25,6 +25,15 @@ export const metadata: Metadata = {
       "We design and build scalable, modern software products and platforms.",
     type: "website",
   },
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function RootLayout({
