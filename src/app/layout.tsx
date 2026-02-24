@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zyphron Technologies – Software Development",
+  title: "Zyphron Technologies - Software Development",
   description:
-    "Zyphron Technologies partners with startups, SMEs, and enterprises to design and build scalable, modern software—from web and mobile apps to SaaS platforms and backend systems.",
+    "Zyphron Technologies partners with startups, SMEs, and enterprises to design and build scalable, modern software from web and mobile apps to SaaS platforms and backend systems.",
   metadataBase: new URL("https://www.zyphron.com"),
   openGraph: {
-    title: "Zyphron Technologies – Software Development",
+    title: "Zyphron Technologies - Software Development",
     description:
       "We design and build scalable, modern software products and platforms.",
     type: "website",

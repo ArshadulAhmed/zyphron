@@ -10,7 +10,7 @@ const reasons = [
     icon: Target,
     title: "Problem-solving first",
     description:
-      "We start with your goals and constraints, then design architecture and delivery plans that fit—no cookie-cutter solutions.",
+      "We start with your goals and constraints, then design architecture and delivery plans that fit. No cookie-cutter solutions.",
   },
   {
     icon: Layers,
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
       id="why-us"
       eyebrow="Why work with us"
       title="Built for scale and long-term success"
-      description="We combine technical depth with a product-minded approach—so you get software that solves real problems and stands the test of time."
+      description="We combine technical depth with a product-minded approach, so you get software that solves real problems and stands the test of time."
     >
       <motion.div
         variants={staggerContainer}

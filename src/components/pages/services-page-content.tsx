@@ -16,7 +16,7 @@ const services = [
   {
     icon: Globe,
     title: "Web development",
-    body: "We build custom web applications, from marketing and product sites to complex internal tools and dashboards. Our stack is modern (React, Next.js, TypeScript) and our architecture is built for growth—so you get fast, maintainable, and scalable solutions.",
+    body: "We build custom web applications, from marketing and product sites to complex internal tools and dashboards. Our stack is modern (React, Next.js, TypeScript) and our architecture is built for growth, so you get fast, maintainable, and scalable solutions.",
   },
   {
     icon: Smartphone,
@@ -36,7 +36,7 @@ const services = [
   {
     icon: Server,
     title: "Backend & API development",
-    body: "Scalable APIs, microservices, and data pipelines. We design for reliability, security, and performance—whether you need a new backend from scratch or to extend and modernize existing systems.",
+    body: "Scalable APIs, microservices, and data pipelines. We design for reliability, security, and performance, whether you need a new backend from scratch or to extend and modernize existing systems.",
   },
 ];
 
@@ -72,7 +72,7 @@ export function ServicesPageContent() {
               variants={fadeInUp(0.4)}
             className="text-slate-400 md:text-lg"
           >
-            From web and mobile to e‑commerce, dashboards, and SaaS—we deliver
+            From web and mobile to e‑commerce, dashboards, and SaaS we deliver
             full-stack solutions built for scale and long-term maintainability.
           </motion.p>
         </motion.div>

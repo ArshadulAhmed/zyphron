@@ -24,7 +24,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`mx-auto w-full max-w-6xl px-4 py-14 md:px-6 md:py-18 lg:px-8 lg:py-20 ${className ?? ""}`}
+      className={`mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-14 lg:px-8 lg:py-18 ${className ?? ""}`}
     >
       <motion.div
         initial="hidden"

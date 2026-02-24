@@ -10,90 +10,74 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden">
-      {/* Top accent line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
-
-      <div className="relative border-t border-slate-800/40 bg-gradient-to-b from-slate-950/80 to-slate-950">
-        <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 lg:px-8">
-          <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between md:gap-20">
-            {/* Brand block – stronger hierarchy */}
-            <div className="max-w-sm space-y-5">
-              <Link
-                href="/"
-                className="inline-flex items-baseline gap-2 text-slate-50"
-              >
-                <span className="text-2xl font-semibold tracking-tight">
-                  Zyphron
-                </span>
-                <span className="text-sm font-medium text-slate-500">
-                  Technologies
-                </span>
-              </Link>
-              <p className="text-sm leading-relaxed text-slate-400">
-                A focused software development partner for teams who care about
-                scalability, reliability, and a refined product experience.
-              </p>
-              <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
-                  Software strategy, design & build
-                </span>
-              </div>
-            </div>
-
-            {/* Links + contact – clearer grouping */}
-            <div className="flex flex-col gap-12 sm:flex-row sm:gap-20">
-              <div>
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-sky-400/90">
-                  Navigate
-                </h3>
-                <ul className="flex flex-col gap-3">
-                  {footerLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-slate-400 transition-colors hover:text-sky-300"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-sky-400/90">
-                  Contact
-                </h3>
-                <a
-                  href="mailto:hello@zyphron.com"
-                  className="text-sm text-slate-400 transition-colors hover:text-sky-300"
-                >
-                  hello@zyphron.com
-                </a>
-              </div>
+    <footer className="relative border-t border-slate-800/60 bg-slate-950">
+      <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)_minmax(0,1.5fr)] md:items-start">
+          {/* Brand block */}
+          <div className="space-y-4">
+            <Link
+              href="/"
+              className="inline-flex items-baseline gap-2 text-slate-50"
+            >
+              <span className="text-xl font-semibold tracking-tight">
+                Zyphron
+              </span>
+              <span className="text-sm font-medium text-slate-500">
+                Technologies
+              </span>
+            </Link>
+            <p className="text-sm leading-relaxed text-slate-400">
+              We design and build modern web, mobile, and SaaS products with a
+              focus on scalability, reliability, and a refined product
+              experience.
+            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="text-[0.7rem] font-medium uppercase tracking-[0.16em] text-slate-500">
+                Software strategy · Design · Build
+              </span>
             </div>
           </div>
 
-          {/* Bottom bar – refined */}
-          <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-slate-800/60 pt-8 md:flex-row md:items-center">
-            <p className="text-xs text-slate-500">
-              © {year} Zyphron Technologies. All rights reserved.
-            </p>
-            <p className="text-xs text-slate-600">
-              Built with Next.js, TypeScript, Tailwind & Framer Motion
-            </p>
+          {/* Navigation */}
+          <div>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Navigate
+            </h3>
+            <ul className="flex flex-col gap-2 text-sm text-slate-400">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors hover:text-slate-50"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Contact
+            </h3>
+            <div className="space-y-2 text-sm text-slate-400">
+              <a
+                href="mailto:hello@zyphron.com"
+                className="block font-medium text-slate-300 transition-colors hover:text-sky-300"
+              >
+                hello@zyphron.com
+              </a>
+              <p>Barpeta, Assam 781314</p>
+            </div>
           </div>
         </div>
 
-        {/* Subtle gradient glow at bottom */}
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(56, 189, 248, 0.08), transparent)",
-          }}
-        />
+        <div className="mt-10 flex flex-col gap-3 border-t border-slate-800/60 pt-4 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>© {year} Zyphron Technologies. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

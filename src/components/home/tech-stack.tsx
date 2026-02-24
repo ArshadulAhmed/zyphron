@@ -44,7 +44,7 @@ const categories: Category[] = [
   {
     label: "Backend",
     accent: "violet",
-    items: ["Node.js", "Python", "PostgreSQL", "Redis", "REST & GraphQL"],
+    items: ["Node.js", "MongoDB", "PostgreSQL", "Redis", "REST & GraphQL"],
   },
   {
     label: "Cloud & DevOps",

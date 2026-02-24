@@ -3,7 +3,7 @@ import { ContactPageContent } from "@/components/pages/contact-page-content";
 import { PageTransition } from "@/components/layout/page-transition";
 
 export const metadata: Metadata = {
-  title: "Contact – Zyphron Technologies",
+  title: "Contact - Zyphron Technologies",
   description:
     "Get in touch to discuss your project. We’ll respond quickly and help you scope your next software initiative.",
 };

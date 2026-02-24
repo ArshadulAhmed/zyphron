@@ -53,7 +53,7 @@ export function Hero() {
             transition: { staggerChildren: 0.14, delayChildren: 0.06 },
           },
         }}
-        className="grid gap-12 lg:grid-cols-[1.05fr,1fr] lg:items-center lg:gap-14"
+        className="grid gap-14 lg:grid-cols-[1.05fr,1fr] lg:items-center lg:gap-16"
       >
         <motion.div className="space-y-8">
           <motion.div
@@ -76,7 +76,7 @@ export function Hero() {
             className="max-w-xl text-lg text-slate-400 md:text-xl"
           >
             We design and build web applications, mobile apps, e‑commerce
-            platforms, and SaaS products—so your team can ship faster and scale
+            platforms, and SaaS products so your team can ship faster and scale
             with confidence.
           </motion.p>
 
@@ -100,7 +100,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Dashboard-style mockup – reads as product UI, not empty space */}
+        {/* Dashboard-style mockup - reads as product UI, not empty space */}
         <motion.div
           variants={fadeInUp(0.7)}
           className="relative hidden lg:block"
@@ -112,7 +112,7 @@ export function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: premiumEase }}
           >
-            {/* Browser chrome – colored dots + url bar */}
+            {/* Browser chrome - colored dots + url bar */}
             <div className="flex items-center gap-2 border-b border-slate-700/60 px-4 py-3">
               <div className="flex gap-1.5">
                 <motion.span
@@ -135,7 +135,7 @@ export function Hero() {
             </div>
 
             <div className="flex">
-              {/* Sidebar – subtle colored accents */}
+              {/* Sidebar - subtle colored accents */}
               <div className="w-14 shrink-0 border-r border-slate-700/60 py-3">
                 {[
                   "bg-sky-500/40",
@@ -159,7 +159,7 @@ export function Hero() {
                 ))}
               </div>
 
-              {/* Main content – title row + cards with inner design */}
+              {/* Main content - title row + cards with inner design */}
               <div className="min-w-0 flex-1 p-4">
                 <div className="mb-4 flex gap-2">
                   {[40, 24, 32].map((w, i) => (
@@ -179,7 +179,7 @@ export function Hero() {
                   ))}
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  {/* 1. Sparkline – baseline + gradient area + line */}
+                  {/* 1. Sparkline - baseline + gradient area + line */}
                   <HeroMockupCard
                     i={0}
                     accent="sky"
@@ -231,7 +231,7 @@ export function Hero() {
                       </div>
                     }
                   />
-                  {/* 2. Gradient orb – radial + subtle ring */}
+                  {/* 2. Gradient orb - radial + subtle ring */}
                   <HeroMockupCard
                     i={1}
                     accent="violet"
@@ -273,7 +273,7 @@ export function Hero() {
                       </div>
                     }
                   />
-                  {/* 3. Area chart – fill + top edge line (KPI style) */}
+                  {/* 3. Area chart - fill + top edge line (KPI style) */}
                   <HeroMockupCard
                     i={2}
                     accent="emerald"
@@ -314,7 +314,7 @@ export function Hero() {
                       </div>
                     }
                   />
-                  {/* 4. Isometric block – 3D with edge highlight */}
+                  {/* 4. Isometric block - 3D with edge highlight */}
                   <HeroMockupCard
                     i={3}
                     accent="amber"
@@ -374,7 +374,7 @@ export function Hero() {
                       </div>
                     }
                   />
-                  {/* 5. Pills – primary + secondary for depth */}
+                  {/* 5. Pills - primary + secondary for depth */}
                   <HeroMockupCard
                     i={4}
                     accent="sky"
@@ -419,7 +419,7 @@ export function Hero() {
                       </div>
                     }
                   />
-                  {/* 6. Bar chart – baseline + gradient bars */}
+                  {/* 6. Bar chart - baseline + gradient bars */}
                   <HeroMockupCard
                     i={5}
                     accent="violet"

@@ -30,11 +30,11 @@ export const staggerContainer: Variants = {
   },
 };
 
-// Subtle card hover – lift and shadow only (no odd scale)
 export const hoverLift = {
   y: -4,
+  scale: 1.01,
   transition: {
-    duration: 0.25,
+    duration: 0.2,
     ease: premiumEase,
   },
 };

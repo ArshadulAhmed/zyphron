@@ -58,7 +58,7 @@ export function ServicesOverview() {
       id="services"
       eyebrow="What we build"
       title="Full-stack software development"
-      description="From idea to production—we deliver web, mobile, e‑commerce, and SaaS solutions with a focus on architecture, performance, and long-term maintainability."
+      description="From idea to production we deliver web, mobile, e‑commerce, and SaaS solutions with a focus on architecture, performance, and long-term maintainability."
     >
       <motion.div
         variants={staggerContainer}

@@ -15,7 +15,7 @@ const blocks = [
   {
     icon: Compass,
     title: "Our approach",
-    body: "We start with your goals and constraints, then design systems and workflows that fit. We work in clear phases—discovery, design, build, launch—with regular demos and feedback so you stay in the loop and can steer when needed.",
+    body: "We start with your goals and constraints, then design systems and workflows that fit. We work in clear phases (discovery, design, build, launch) with regular demos and feedback so you stay in the loop and can steer when needed.",
   },
   {
     icon: Heart,
@@ -27,7 +27,7 @@ const blocks = [
 export function AboutPageContent() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 pt-20 pb-16 md:px-6 md:pt-28 md:pb-24 lg:px-8">
+      <section className="mx-auto max-w-6xl px-4 pt-20 pb-10 md:px-6 md:pt-28 md:pb-18 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -57,7 +57,7 @@ export function AboutPageContent() {
             className="text-slate-400 md:text-lg"
           >
             We are a software development firm that builds web, mobile,
-            e‑commerce, and SaaS solutions for startups, SMEs, and enterprises—with
+            e‑commerce, and SaaS solutions for startups, SMEs, and enterprises, with
             an emphasis on scalability, reliability, and a professional approach
             to delivery.
           </motion.p>
@@ -95,6 +95,7 @@ export function AboutPageContent() {
       </Section>
 
       <Section
+        eyebrow="Next step"
         title="Technical expertise you can rely on"
         description="We bring architecture expertise, modern tooling, and a commitment to quality. Whether you need a new product from scratch or to extend and harden existing systems, we’re set up to deliver enterprise-grade software and clear communication at every step."
         className="pb-20"
@@ -108,7 +109,7 @@ export function AboutPageContent() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-800/50 px-5 py-3 text-sm font-medium text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800 hover:text-slate-50"
+            className="inline-flex items-center gap-2 rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 outline-none transition-[opacity,transform] duration-200 hover:opacity-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             Start a conversation
             <span aria-hidden>→</span>
