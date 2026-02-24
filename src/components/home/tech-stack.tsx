@@ -4,29 +4,6 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 import { fadeInUp, staggerContainer, hoverLift } from "@/lib/motion";
 
-const categories = [
-  {
-    label: "Frontend",
-    accent: "sky",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
-  },
-  {
-    label: "Backend",
-    accent: "violet",
-    items: ["Node.js", "Python", "PostgreSQL", "Redis", "REST & GraphQL"],
-  },
-  {
-    label: "Cloud & DevOps",
-    accent: "emerald",
-    items: ["AWS", "Vercel", "Docker", "CI/CD", "Monitoring"],
-  },
-  {
-    label: "Product",
-    accent: "amber",
-    items: ["E‑commerce", "Auth & Billing", "Analytics", "APIs & Integrations"],
-  },
-];
-
 const accentStyles = {
   sky: {
     border: "border-l-sky-500/70",
@@ -49,6 +26,37 @@ const accentStyles = {
     pill: "border-amber-500/30 bg-amber-500/10 text-amber-300",
   },
 } as const;
+
+type Accent = keyof typeof accentStyles;
+
+type Category = {
+  label: string;
+  accent: Accent;
+  items: string[];
+};
+
+const categories: Category[] = [
+  {
+    label: "Frontend",
+    accent: "sky",
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
+  },
+  {
+    label: "Backend",
+    accent: "violet",
+    items: ["Node.js", "Python", "PostgreSQL", "Redis", "REST & GraphQL"],
+  },
+  {
+    label: "Cloud & DevOps",
+    accent: "emerald",
+    items: ["AWS", "Vercel", "Docker", "CI/CD", "Monitoring"],
+  },
+  {
+    label: "Product",
+    accent: "amber",
+    items: ["E‑commerce", "Auth & Billing", "Analytics", "APIs & Integrations"],
+  },
+];
 
 export function TechStack() {
   return (
