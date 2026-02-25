@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -15,24 +16,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zyphron Technologies - Software Development",
+  title: "Custom Software Development Company | Zyphron Technologies",
   description:
-    "Zyphron Technologies partners with startups, SMEs, and enterprises to design and build scalable, modern software from web and mobile apps to SaaS platforms and backend systems.",
-  metadataBase: new URL("https://www.zyphron.com"),
+    "Zyphron Technologies is a custom software development company in India helping teams design, build, and scale modern web, mobile, e‑commerce, and SaaS products.",
+  metadataBase: new URL("https://zyphron.in"),
   openGraph: {
-    title: "Zyphron Technologies - Software Development",
+    title: "Custom Software Development Company | Zyphron Technologies",
     description:
-      "We design and build scalable, modern software products and platforms.",
+      "End-to-end software development for web, mobile, e‑commerce, dashboards, and SaaS platforms.",
     type: "website",
+    url: "https://zyphron.in",
+    siteName: "Zyphron Technologies",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Software Development Company | Zyphron Technologies",
+    description:
+      "Partner with Zyphron Technologies to design and build scalable, modern software products.",
   },
   robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-    },
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -46,6 +53,50 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
       >
+        <Script
+          id="zyphron-organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Zyphron Technologies",
+              url: "https://zyphron.in",
+              logo: "https://zyphron.in/favicon.ico",
+              email: "hello@zyphron.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Barpeta",
+                addressRegion: "Assam",
+                postalCode: "781314",
+                addressCountry: "IN",
+              },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  email: "hello@zyphron.com",
+                  areaServed: "IN",
+                  availableLanguage: ["en"],
+                },
+              ],
+            }),
+          }}
+        />
+        <Script
+          id="zyphron-website-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Zyphron Technologies",
+              url: "https://zyphron.in",
+            }),
+          }}
+        />
         <div className="relative min-h-screen overflow-hidden">
           <div className="pointer-events-none fixed inset-0 -z-10">
             <div className="absolute inset-0 bg-slate-950" />
