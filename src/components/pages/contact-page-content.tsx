@@ -8,6 +8,8 @@ import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 export function ContactPageContent() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [projectType, setProjectType] = useState("");
   const [budgetRange, setBudgetRange] = useState("");
   const [openMenu, setOpenMenu] = useState<"project" | "budget" | null>(null);
@@ -66,9 +68,38 @@ export function ContactPageContent() {
           <motion.form
             variants={fadeInUp(0)}
             className="space-y-6 rounded-2xl border border-slate-800/80 bg-slate-900/70 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.85)]"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              setSubmitted(true);
+              setError(null);
+              setSubmitted(false);
+
+              const form = e.currentTarget;
+              const formData = new FormData(form);
+              const payload = Object.fromEntries(formData.entries());
+
+              setSubmitting(true);
+              try {
+                const res = await fetch("/api/contact", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(payload),
+                });
+
+                if (!res.ok) {
+                  throw new Error("Failed to send message");
+                }
+
+                setSubmitted(true);
+                form.reset();
+                setProjectType("");
+                setBudgetRange("");
+              } catch {
+                setError("Something went wrong. Please try again in a moment.");
+              } finally {
+                setSubmitting(false);
+              }
             }}
           >
             <div className="grid gap-4 md:grid-cols-2">
@@ -312,15 +343,19 @@ export function ContactPageContent() {
             <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 outline-none transition-[opacity,transform] duration-200 hover:opacity-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                disabled={submitting}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 outline-none transition-[opacity,transform] duration-200 hover:opacity-95 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               >
-                Send message
+                {submitting ? "Sending..." : "Send message"}
                 <Send className="h-4 w-4" />
               </button>
               {submitted && (
                 <p className="text-sm text-emerald-400 sm:text-right">
                   Thanks! We’ll get back to you soon.
                 </p>
+              )}
+              {!submitted && error && (
+                <p className="text-sm text-red-400 sm:text-right">{error}</p>
               )}
             </div>
           </motion.form>
